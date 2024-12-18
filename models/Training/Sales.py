@@ -1,6 +1,7 @@
 import snowflake.snowpark.functions as F
 def model (dbt,session):
-  df_sql = session.sql("select * from prod.product")
-  
+  df = session.sql("select * from prod.product")
+  df_filter= df.filter(F.col("REGION")=='West')
+  df_final = df_filter.group_by("STATE").agg(F.sum(F.col('GLOBAL_SALES')))
 
-  return df_sql
+  return df_final
