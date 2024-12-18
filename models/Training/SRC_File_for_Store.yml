@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: test_prod
+    warehouse: DWH_WH
     database: DBT_DB
     schema: PROD
     tables:
