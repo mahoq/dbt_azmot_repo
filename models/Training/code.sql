@@ -1,5 +1,6 @@
-with code as
+{{config(materialized = 'table')}}
+with code as 
 (
-    select * from {{ ref('Countrydialcode')}}
-)
-select * from code
+    select * from {{ ref("Countrydialcode") }}
+
+) select * from code
