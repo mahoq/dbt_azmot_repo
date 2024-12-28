@@ -1,2 +1,2 @@
 select * from employee
-{{employee(40000, 5)}}
+{{employee(40000)}}
